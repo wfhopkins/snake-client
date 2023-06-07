@@ -14,6 +14,31 @@ const connect = function () {
     conn.write("Name: WFH")
   });
   
+  conn.on("connect", () => {
+
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 50);
+    
+    setTimeout(() => {
+      conn.write("Move: up");
+    }, 50);
+
+    setTimeout(() => {
+      conn.write("Move: down");
+    }, 100);
+
+    setTimeout(() => {
+      conn.write("Move: left");
+    }, 150);
+
+    setTimeout(() => {
+      conn.write("Move: right");
+    }, 200);
+  });
+  
+
+
   conn.on("data", (data) => {
     console.log("Message from server: ", data);
   });
